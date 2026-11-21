@@ -1,0 +1,5 @@
+node_modules
+dist
+.bumpgate
+.testmuai/evidence
+*.log

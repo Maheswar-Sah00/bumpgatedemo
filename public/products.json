@@ -1,0 +1,10 @@
+[
+  { "id": "copper-kettle", "name": "Copper Kettle", "category": "Kitchen", "price": 64, "was": 89, "tone": "#c8763a", "mark": "CK", "blurb": "Hammered copper, whistles at the boil. 1.7 litres." },
+  { "id": "stoneware-mugs", "name": "Stoneware Mug Set", "category": "Kitchen", "price": 32, "was": 42, "tone": "#8a6f5a", "mark": "SM", "blurb": "Four speckled mugs, glazed by hand, 350 ml each." },
+  { "id": "linen-throw", "name": "Linen Throw", "category": "Living", "price": 58, "was": 79, "tone": "#b9a27f", "mark": "LT", "blurb": "Stonewashed linen in oat, 130 × 170 cm." },
+  { "id": "brass-lamp", "name": "Brass Reading Lamp", "category": "Living", "price": 118, "was": 149, "tone": "#b8913c", "mark": "BL", "blurb": "Swing arm, warm 2700K bulb included." },
+  { "id": "oak-board", "name": "Oak Chopping Board", "category": "Kitchen", "price": 38, "was": 48, "tone": "#9b6b3d", "mark": "OB", "blurb": "End-grain oak, oiled, with a juice groove." },
+  { "id": "wool-slippers", "name": "Wool Slippers", "category": "Wear", "price": 44, "was": 55, "tone": "#7d5b4b", "mark": "WS", "blurb": "Felted merino with a suede sole." },
+  { "id": "beeswax-candles", "name": "Beeswax Candles", "category": "Living", "price": 22, "was": 28, "tone": "#d2a24c", "mark": "BC", "blurb": "Pair of hand-dipped tapers, 30 hours each." },
+  { "id": "cast-iron-pan", "name": "Cast Iron Pan", "category": "Kitchen", "price": 72, "was": 95, "tone": "#5a4a42", "mark": "CI", "blurb": "Pre-seasoned 26 cm skillet that lasts a lifetime." }
+]
