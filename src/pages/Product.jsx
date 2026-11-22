@@ -6,10 +6,10 @@ import { ProductArt } from './Shop.jsx';
 
 export default function Product() {
   const { id } = useParams();
-  const { data: p, isLoading, isError } = useQuery(['product', id], () => fetchProduct(id));
+  const { data: p, isPending, isError } = useQuery({ queryKey: ['product', id], queryFn: () => fetchProduct(id) });
   const { add } = useCart();
 
-  if (isLoading) return <p className="empty">Loading…</p>;
+  if (isPending) return <p className="empty">Loading…</p>;
   if (isError) return <p className="empty error">We could not find that product. <Link to="/">Back to the shop</Link></p>;
 
   return (
