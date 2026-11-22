@@ -3,9 +3,11 @@ name: Bumpgate
 # Every Dependabot / Renovate PR: Kane CLI replays .kane/ journeys on main and on the bump.
 # Merges only if every journey that passes on main still passes. On a break, Claude Code migrates
 # the code from Kane's evidence and Kane re-verifies; after 3 tries a human takes over.
+# No `labeled` trigger: Dependabot labels every PR right after opening it, and each label event would
+# join the concurrency group below and cancel the real run before any job-level filter could skip it.
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
@@ -19,12 +21,10 @@ concurrency:
 
 jobs:
   gate:
-    # Dependabot adds its own labels right after opening a PR; only the `bumpgate` label re-runs the gate.
     if: >-
-      (github.event.action != 'labeled' || github.event.label.name == 'bumpgate') && (
       github.event.pull_request.user.login == 'dependabot[bot]' ||
       github.event.pull_request.user.login == 'renovate[bot]' ||
-      contains(github.event.pull_request.labels.*.name, 'bumpgate'))
+      contains(github.event.pull_request.labels.*.name, 'bumpgate')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
