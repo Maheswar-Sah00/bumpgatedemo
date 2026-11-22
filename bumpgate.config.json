@@ -1,7 +1,7 @@
 {
   "journeys": ".kane",
   "serve": { "type": "static", "dir": "dist", "spa": true },
-  "agent": "codex",
+  "agent": "claude",
   "amber": "review",
   "maxFixAttempts": 3,
   "kane": { "timeout": 300, "maxSteps": 30, "maxRuns": 24 }

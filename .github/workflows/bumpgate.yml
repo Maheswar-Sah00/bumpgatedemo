@@ -1,7 +1,7 @@
 name: Bumpgate
 
 # Every Dependabot / Renovate PR: Kane CLI replays .kane/ journeys on main and on the bump.
-# Merges only if every journey that passes on main still passes. On a break, Codex migrates
+# Merges only if every journey that passes on main still passes. On a break, Claude Code migrates
 # the code from Kane's evidence and Kane re-verifies; after 3 tries a human takes over.
 on:
   pull_request:
@@ -37,5 +37,5 @@ jobs:
         with:
           lt-username: ${{ secrets.LT_USERNAME }}
           lt-access-key: ${{ secrets.LT_ACCESS_KEY }}
-          agent: codex
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          agent: claude
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
