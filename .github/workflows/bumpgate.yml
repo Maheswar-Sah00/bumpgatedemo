@@ -18,10 +18,12 @@ concurrency:
 
 jobs:
   gate:
+    # Dependabot adds its own labels right after opening a PR; only the `bumpgate` label re-runs the gate.
     if: >-
+      (github.event.action != 'labeled' || github.event.label.name == 'bumpgate') && (
       github.event.pull_request.user.login == 'dependabot[bot]' ||
       github.event.pull_request.user.login == 'renovate[bot]' ||
-      contains(github.event.pull_request.labels.*.name, 'bumpgate')
+      contains(github.event.pull_request.labels.*.name, 'bumpgate'))
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
