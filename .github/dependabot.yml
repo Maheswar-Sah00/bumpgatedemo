@@ -7,6 +7,7 @@ updates:
     open-pull-requests-limit: 5
     # The demo gates these three upgrades: zod and react-query break the shop at runtime
     # while the build stays green; clsx is a safe upgrade that should merge on its own.
+    # The demo is reset now and then (old versions restored) so the three PRs can be watched again.
     allow:
       - dependency-name: zod
       - dependency-name: "@tanstack/react-query"

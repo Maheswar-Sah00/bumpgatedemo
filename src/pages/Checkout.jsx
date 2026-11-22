@@ -39,7 +39,7 @@ export default function Checkout() {
     const result = checkoutSchema.safeParse(form);
     if (!result.success) {
       const next = {};
-      result.error.issues.forEach((issue) => {
+      result.error.errors.forEach((issue) => {
         const field = issue.path[0];
         if (!next[field]) next[field] = issue.message;
       });

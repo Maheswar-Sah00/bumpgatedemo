@@ -16,13 +16,13 @@ export function ProductArt({ product, large = false }) {
 }
 
 export default function Shop() {
-  const { data: products, isPending, isError, error } = useQuery({ queryKey: ['products'], queryFn: fetchProducts });
+  const { data: products, isLoading, isError, error } = useQuery(['products'], fetchProducts);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [added, setAdded] = useState(null);
   const { add } = useCart();
 
-  if (isPending) return <p className="empty">Loading the sale…</p>;
+  if (isLoading) return <p className="empty">Loading the sale…</p>;
   if (isError) return <p className="empty error">Something went wrong: {String(error?.message || error)}</p>;
 
   const q = query.trim().toLowerCase();
